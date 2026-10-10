@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ESSAM IT | عصام لتقنية المعلومات</title>
+
+    <meta name="description" content="ESSAM IT - تصميم مواقع الويب والحلول التقنية للمشاريع الصغيرة.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+
+        header {
+            background: #111c33;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #26354e;
+        }
+
+        .logo {
+            color: #38bdf8;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            min-height: 500px;
+            padding: 90px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                radial-gradient(ellipse at top, #17375c 0%, #0b1120 65%);
+        }
+
+        .badge {
+            display: inline-block;
+            border: 1px solid #38bdf8;
+            color: #7dd3fc;
+            padding: 5px 16px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 7vw, 55px);
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 23px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .primary {
+            background: #0284c7;
+            color: white;
+        }
+
+        .whatsapp {
+            background: #25d366;
+            color: #062b18;
+        }
+
+        .outline {
+            border: 1px solid #64748b;
+            color: white;
+        }
+
+        section {
+            padding: 65px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 35px;
+        }
+
+        .about {
+            background: #101a2e;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 750px;
+            margin: auto;
+            color: #cbd5e1;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #142139;
+            border: 1px solid #26354e;
+            border-radius: 15px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .projects {
+            background: #101a2e;
+        }
+
+        .project-card {
+            background: #0b1120;
+            border: 1px solid #26354e;
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            padding: 35px 20px;
+            background: #142139;
+            border: 1px solid #26354e;
+            border-radius: 18px;
+        }
+
+        .contact-box p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: #070c16;
+            text-align: center;
+            padding: 25px 15px;
+            color: #94a3b8;
+            border-top: 1px solid #26354e;
+        }
+
+        footer strong {
+            color: #38bdf8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 65px 18px;
+            }
+
+            section {
+                padding: 50px 18px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- القائمة الرئيسية -->
+    <header>
+        <div class="logo">ESSAM IT</div>
+
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#about">من أنا</a>
+            <a href="#services">الخدمات</a>
+            <a href="#projects">أعمالي</a>
+            <a href="#contact">تواصل معي</a>
+        </nav>
+    </header>
+
+    <!-- الواجهة الرئيسية -->
+    <main>
+        <section class="hero" id="home">
+
+            <div class="badge">عالم التقنية والإبداع</div>
+
+            <h1>
+                مرحبًا بك في<br>
+                <span>ESSAM IT</span>
+            </h1>
+
+            <p>
+                أنا عصام الحميري، أتعلم وأعمل في مجال تقنية المعلومات.
+                أسعى إلى تطوير مواقع ويب عصرية وتقديم حلول تقنية
+                تساعد أصحاب المشاريع على تطوير أعمالهم.
+            </p>
+
+            <div class="buttons">
+                <a class="btn primary" href="#services">
+                    اكتشف خدماتي
+                </a>
+
+                <a class="btn whatsapp"
+                   href="https://wa.me/967733606370?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    تواصل عبر واتساب
+                </a>
+            </div>
+
+        </section>
+
+        <!-- من أنا -->
+        <section class="about" id="about">
+
+            <h2 class="section-title">من <span>أنا؟</span></h2>
+
+            <p class="section-description">
+                شغف بالتقنية وطموح نحو المستقبل
+            </p>
+
+            <p class="about-text">
+                أنا عصام الحميري، طالب ومهتم بتقنية المعلومات وتطوير الويب.
+                أعمل على تنمية مهاراتي في البرمجة وتصميم المواقع،
+                وأسعى إلى تقديم أعمال مفيدة وعملية للأفراد والمشاريع الصغيرة.
+                أؤمن أن التعلم المستمر هو أساس النجاح في عالم التقنية.
+            </p>
+
+        </section>
+
+        <!-- الخدمات -->
+        <section id="services">
+
+            <h2 class="section-title">خدماتي <span>التقنية</span></h2>
+
+            <p class="section-description">
+                حلول رقمية تساعدك على تقديم مشروعك بصورة أفضل
+            </p>
+
+            <div class="services-grid">
+
+                <article class="card">
+                    <div class="icon">🌐</div>
+                    <h3>تصميم مواقع الويب</h3>
+                    <p>
+                        تصميم صفحات ومواقع إلكترونية عصرية
+                        ومتوافقة مع الجوال والكمبيوتر.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">🎨</div>
+                    <h3>التصميم الإبداعي</h3>
+                    <p>
+                        إعداد أفكار وتصاميم رقمية مناسبة
+                        للمشاريع والأنشطة التجارية.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">💻</div>
+                    <h3>حلول تقنية</h3>
+                    <p>
+                        المساعدة في المشكلات التقنية الأساسية
+                        وتقديم إرشادات لاستخدام البرامج.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="icon">📱</div>
+                    <h3>مواقع للمشاريع</h3>
+                    <p>
+                        إنشاء صفحات تعريفية للمحلات والمطاعم
+                        والخدمات لعرض معلوماتها على الإنترنت.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- معرض الأعمال -->
+        <section class="projects" id="projects">
+
+            <h2 class="section-title">معرض <span>أعمالي</span></h2>
+
+            <p class="section-description">
+                نماذج تدريبية أطورها لتنمية مهاراتي
+            </p>
+
+            <div class="services-grid">
+
+                <article class="project-card">
+                    <h3>مشروع ESSAM IT</h3>
+                    <p>
+                        صفحة شخصية للتعريف بي وبمجالات اهتمامي
+                        وخدماتي التقنية.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>موقع محل تجاري</h3>
+                    <p>
+                        فكرة لموقع يعرض منتجات المحلات
+                        ومعلومات التواصل معها.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>موقع عيادة</h3>
+                    <p>
+                        نموذج أولي لصفحة تعريفية بعيادة
+                        وخدماتها ومواعيد العمل.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- التواصل -->
+        <section class="contact" id="contact">
+
+            <h2 class="section-title">لنعمل <span>معًا</span></h2>
+
+            <p class="section-description">
+                لديك مشروع أو فكرة؟ يسعدني التواصل معك
+            </p>
+
+            <div class="contact-box">
+
+                <h3>تواصل معي مباشرة</h3>
+
+                <p>
+                    اضغط على الزر أدناه للانتقال إلى واتساب
+                    وإرسال استفسارك.
+                </p>
+
+                <a class="btn whatsapp"
+                   href="https://wa.me/967717723245?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    💬 راسلني على واتساب
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- أسفل الموقع -->
+    <footer>
+        <p><strong>ESSAM IT</strong> | عصام لتقنية المعلومات</p>
+        <p>بداية صغيرة، وطموح كبير.</p>
+        <p>© 2026 جميع الحقوق محفوظة</p>
+    </footer>
+
+</body>
+</html>
